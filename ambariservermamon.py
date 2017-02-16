@@ -54,5 +54,5 @@ GATEWAY='''+gateway+''''''
 
 
 
-i = mamonSetupMe('http://192.168.70.110/mamonapp/memo.txt')
+i = mamonSetupMe('http://192.168.70.110/mamonapp/memo.txt') # upload the memo.txt in web url either in your local pc or in online one
 i.start()
