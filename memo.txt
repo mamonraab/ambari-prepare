@@ -1,0 +1,19 @@
+yum -y install tar zip curl wget openssl openssh scp nano pico  ntp gcc perl  java-1.8.0-openjdk java-1.8.0-openjdk-devel
+setenforce permissive
+service ntpd start
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.4.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+yum repolist
+ln -s /usr/bin/jps   /usr/lib/jvm/jre//bin/jps
+ln -s /usr/bin/jar   /usr/lib/jvm/jre/bin/jar
+ln -s /usr/bin/jar   /usr/lib/jvm/jre/bin/jar
+ulimit -n 10000
+chkconfig --list ntpd
+chkconfig ntpd on
+service ntpd start
+chkconfig iptables off
+/etc/init.d/iptables stop
+setenforce 0
+echo umask 0022 >> /etc/profile
+yum -y install ambari-server
+ambari-server setup
+ambari-server start
