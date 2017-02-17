@@ -7,13 +7,11 @@ ln -s /usr/bin/jps   /usr/lib/jvm/jre//bin/jps
 ln -s /usr/bin/jar   /usr/lib/jvm/jre/bin/jar
 ln -s /usr/bin/jar   /usr/lib/jvm/jre/bin/jar
 ulimit -n 10000
-chkconfig --list ntpd
-chkconfig ntpd on
 service ntpd start
-chkconfig iptables off
 /etc/init.d/iptables stop
 setenforce 0
 echo umask 0022 >> /etc/profile
-yum -y install ambari-server
-ambari-server setup
-ambari-server start
+chkconfig iptables off
+chkconfig --list ntpd
+chkconfig ntpd on
+

@@ -28,7 +28,13 @@ HOSTNAME='''+hostname+''''''
         files = urllib2.urlopen(self.file)
         for line in files:
             wordlist = line.split()
-            call(wordlist)
+            print 'iam goining to do these cmd '+line+' /n'
+            try:
+                call(wordlist)
+            except Exception as e:
+                print e
+            finally:
+                print 'going next'
         print 'done prepare these box'
     def setNetwork(self):
         dev = raw_input('device name :')
@@ -54,5 +60,5 @@ GATEWAY='''+gateway+''''''
 
 
 
-i = mamonSetupMe('http://192.168.70.110/mamonapp/memo.txt') # upload the memo.txt in web url either in your local pc or in online one
+i = mamonSetupMe('http://192.168.70.110/mamonapp/memo.txt')
 i.start()
