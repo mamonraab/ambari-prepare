@@ -1,4 +1,7 @@
 # ambari-prepare
+
+
+
 check the video to full hands on install hadoop and ambari
 https://youtu.be/BMMtLqfi0hc
 
@@ -92,3 +95,15 @@ ambari-agent start
 
 بعدها اتصل بلامباري سيرفر عبر المتصفح
 mainboxip:8080
+
+لاتنسونا من الدعاء
+
+====================================================
+
+Note:- these script built to simple the installtion of ambari server for local enviroment
+so even if you use its in  real enviroment delet its after instlation   why ? just for security reason
+
+also i will keep its update to fix any  ambari installtion issue so  once you need help just email me and
+i will help you
+you can found me on 
+https://www.linkedin.com/in/mamon-rasool-88aa4a40/
