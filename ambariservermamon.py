@@ -1,6 +1,6 @@
 from subprocess import call
 import urllib2
-
+import urlparse
 
 class mamonSetupMe:
     def __init__(self, filememo):
@@ -25,7 +25,13 @@ HOSTNAME='''+hostname+''''''
 
 
     def prepare(self):
-        files = urllib2.urlopen(self.file)
+        url = self.file
+        parsurl = urlparse.urlparse(url)
+        if bool(parsurl.scheme):
+            files = urllib2.urlopen(self.file)
+        else:
+            with open(self.file) as fil:
+                files = fil.readlines()
         for line in files:
             wordlist = line.split()
             print 'iam goining to do these cmd '+line+' /n'
@@ -60,5 +66,5 @@ GATEWAY='''+gateway+''''''
 
 
 
-i = mamonSetupMe('http://192.168.70.110/mamonapp/memo.txt')
+i = mamonSetupMe('./memo.txt')
 i.start()
