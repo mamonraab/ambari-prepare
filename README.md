@@ -1,15 +1,17 @@
 # ambari-prepare
+check the video to full hands on install hadoop and ambari
+https://youtu.be/BMMtLqfi0hc
+
 
 these py script will do the fellow
-first if you need help run these py
-https://youtu.be/i_INe5EmiZA
+
 1- setup your eth device and set static ip and change host name
 
-and will install these pkg
+2- will install these pkg
 wget curl openssl openssh tar zip scp java-1.8.0-openjdk java-1.8.0-openjdk-devl ntp deltarpm gcc perl
 http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.4.2.0/ambari.repo
 
-than you should do the fallwoing
+than you should do the fallwoing :- 
 1- make all node see each other by host name not only ip
 you can sure that from /etc/hosts
 nano /etc/hosts
@@ -22,13 +24,14 @@ ambari-server start
 
 chkconfig  ambari-server 
 
-in agent node doe
-
+in agent node do
+yum -y install ambari-agent
+ambari-agent start
 nano /etc/ambari-agent/conf/ambari-agent.ini
 
 [server]
 
-hostname=<your.ambari.server.hostname>
+hostname=your.ambari.server.hostname
 
 url_port=8440
 
@@ -41,7 +44,7 @@ The agent registers with the Server on start.
 
 
 ==============================
-https://youtu.be/i_INe5EmiZA
+https://youtu.be/BMMtLqfi0hc
 
 الشرح العربي
 اولا  شغل كما في الفيديو
@@ -65,12 +68,19 @@ ambari-server start
 
 chkconfig  ambari-server 
 
+
 في العميل تكتب
+yum -y install ambari-agent
+ 
+ ambari-agent start
+
+chkconfig  ambari-agent 
+
 nano /etc/ambari-agent/conf/ambari-agent.ini
 
 [server]
 
-hostname=<your.ambari.server.hostname>
+hostname=your.ambari.server.hostname
 
 url_port=8440
 
