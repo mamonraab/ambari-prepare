@@ -19,6 +19,19 @@ HOSTNAME='''+hostname+''''''
             file_mamon.write(networkhost)
             file_mamon.close()
             print 'done change host name'
+        fixthup = raw_input('Do you want me to fix thup for you :')
+        if fixthup =='y':
+
+            thupp='''touch /var/lock/subsys/local
+        if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+   echo never > /sys/kernel/mm/transparent_hugepage/enabled
+fi
+if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+   echo never > /sys/kernel/mm/transparent_hugepage/defrag
+fi'''
+            file_mamon = open('/etc/rc.local','w')
+            file_mamon.write(thupp)
+            file_mamon.close()
         prepare = raw_input('Do you want me to prepare these server for ambari :')
         if prepare=='y':
             self.prepare()
