@@ -3,8 +3,7 @@
 
 
 check the video to full hands on install hadoop and ambari
-https://youtu.be/BMMtLqfi0hc
-
+https://www.youtube.com/playlist?list=PLsu_bT2-wUK7YQz-SpD7XYvam3jDlpNu0
 
 these py script will do the fellow
 
@@ -47,7 +46,8 @@ The agent registers with the Server on start.
 
 
 ==============================
-https://youtu.be/BMMtLqfi0hc
+https://www.youtube.com/playlist?list=PLsu_bT2-wUK7YQz-SpD7XYvam3jDlpNu0
+
 
 الشرح العربي
 اولا  شغل كما في الفيديو
